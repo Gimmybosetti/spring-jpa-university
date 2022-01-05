@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http:/www.thymeleaf.org">
+	<head>
+		<div th:replace="fragment-resources :: head"></div>
+		<title>Departments</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="text-center my-3 py-3">Departments</h1 >
+			<table class="table align-middle">
+				<thead>
+					<tr>
+						<th scope="col" class="col-md-2 table-warning">Nome</th>
+						<th scope="col" class="col-md-2 table-warning">Indirizzo</th>
+						<th scope="col" class="col-md-2 table-warning">Telefono</th>
+						<th scope="col" class="col-md-2 table-warning">Email</th>
+						<th scope="col" class="col-md-2 table-warning">Website</th>
+						<th scope="col" class="col-md-2 table-warning">Capo Dipartimento</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="dep : ${departments}">
+						<td th:text="${dep.name}" class="table-primary"></td >
+						<td th:text="${dep.address}" class="table-info"></td >
+						<td th:text="${dep.phone}" class="table-info"></td >
+						<td th:text="${dep.email}" class="table-info"></td >
+						<td th:text="${dep.website}" class="table-secondary"></td >
+						<td th:text="${dep.headOfDepartment}" class="table-success"></td >
+					</tr>
+				</tbody>
+			</table >
+		</div>
+	<div th:replace="fragment-resources :: scripts"></div>
+	</body>
+</html>
