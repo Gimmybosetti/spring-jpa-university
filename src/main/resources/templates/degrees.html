@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http:/www.thymeleaf.org">
+	<head>
+		<div th:replace="fragment-resources :: head"></div>
+		<title>Degrees</title>
+	</head>
+	<body>
+		<div class="container mb-0 pb-0">
+			<h1 class="text-center my-3 py-3" th:text="|Degrees of ${department.name}|"></h1 >
+			<table class="table align-middle">
+				<thead>
+					<tr>
+						<th scope="col" class="col-md-2 table-warning">Nome</th>
+						<th scope="col" class="col-md-2 table-warning">Livello</th>
+						<th scope="col" class="col-md-2 table-warning">Indirizzo</th>
+						<th scope="col" class="col-md-2 table-warning">Email</th>
+						<th scope="col" class="col-md-2 table-warning">Website</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="degree : ${degrees}">
+						<td th:text="${degree.name}" class="table-primary"></td >
+						<td th:text="${degree.level}" class="table-info"></td >
+						<td th:text="${degree.address}" class="table-success"></td >
+						<td th:text="${degree.email}" class="table-success"></td >
+						<td th:text="${degree.website}" class="table-secondary"></td >
+					</tr>
+				</tbody>
+			</table >
+		</div>
+		<div class="container my-0 py-0">
+			<a class="btn btn-primary" th:href="@{/}" th:text="Back"></a>
+		</div >
+	<div th:replace="fragment-resources :: scripts"></div>
+	</body>
+</html>

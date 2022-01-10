@@ -16,16 +16,20 @@
 						<th scope="col" class="col-md-2 table-warning">Email</th>
 						<th scope="col" class="col-md-2 table-warning">Website</th>
 						<th scope="col" class="col-md-2 table-warning">Capo Dipartimento</th>
+						<th scope="col" class="col-md-2 table-warning"></th >
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="dep : ${departments}">
-						<td th:text="${dep.name}" class="table-primary"></td >
-						<td th:text="${dep.address}" class="table-info"></td >
-						<td th:text="${dep.phone}" class="table-info"></td >
-						<td th:text="${dep.email}" class="table-info"></td >
-						<td th:text="${dep.website}" class="table-secondary"></td >
-						<td th:text="${dep.headOfDepartment}" class="table-success"></td >
+					<tr th:each="department : ${departments}">
+						<td th:text="${department.name}" class="table-primary"></td >
+						<td th:text="${department.address}" class="table-info"></td >
+						<td th:text="${department.phone}" class="table-info"></td >
+						<td th:text="${department.email}" class="table-info"></td >
+						<td th:text="${department.website}" class="table-secondary"></td >
+						<td th:text="${department.headOfDepartment}" class="table-success"></td >
+						<td class="table-success">
+							<a class="btn btn-primary" th:text="Degrees" th:href="@{|/department/${department.id}|}">
+						</td  >
 					</tr>
 				</tbody>
 			</table >
